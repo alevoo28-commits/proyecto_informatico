@@ -1,0 +1,32 @@
+<svg width="820" height="540" viewBox="0 0 820 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitectura TI empresarial</title>
+  <desc id="desc">Ilustracion abstracta de nube, integracion de sistemas y analitica empresarial en tonos azules.</desc>
+  <rect width="820" height="540" rx="32" fill="#0F2A56"/>
+  <rect x="28" y="28" width="764" height="484" rx="26" fill="#143A77"/>
+  <circle cx="143" cy="110" r="7" fill="#56B6FF"/>
+  <circle cx="172" cy="110" r="7" fill="#7AC6FF"/>
+  <circle cx="201" cy="110" r="7" fill="#A8DAFF"/>
+  <rect x="88" y="162" width="284" height="118" rx="16" fill="#EAF4FF"/>
+  <rect x="104" y="184" width="164" height="16" rx="8" fill="#3E72CC"/>
+  <rect x="104" y="211" width="244" height="12" rx="6" fill="#9BB8E6"/>
+  <rect x="104" y="233" width="213" height="12" rx="6" fill="#B1C7EA"/>
+  <rect x="448" y="144" width="286" height="150" rx="20" fill="#FFFFFF"/>
+  <rect x="474" y="170" width="142" height="16" rx="8" fill="#2F66C4"/>
+  <rect x="474" y="198" width="236" height="11" rx="5.5" fill="#A8C0E6"/>
+  <rect x="474" y="219" width="205" height="11" rx="5.5" fill="#C2D4EF"/>
+  <rect x="474" y="244" width="126" height="24" rx="12" fill="#0FA3E8"/>
+  <path d="M234 281L228 365L325 365L323 280" stroke="#56B6FF" stroke-width="3"/>
+  <path d="M586 294L583 365L678 365L678 298" stroke="#76C8FF" stroke-width="3"/>
+  <rect x="190" y="365" width="144" height="84" rx="14" fill="#F4F9FF"/>
+  <rect x="208" y="384" width="95" height="11" rx="5.5" fill="#7DA3DE"/>
+  <rect x="208" y="403" width="110" height="11" rx="5.5" fill="#AFC6E8"/>
+  <rect x="492" y="365" width="148" height="84" rx="14" fill="#F6FBFF"/>
+  <rect x="510" y="384" width="99" height="11" rx="5.5" fill="#89AFE6"/>
+  <rect x="510" y="403" width="116" height="11" rx="5.5" fill="#B6CBEA"/>
+  <path d="M332 405H493" stroke="#66C2FF" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="412" cy="405" r="13" fill="#0FA3E8"/>
+  <path d="M412 338V392" stroke="#66C2FF" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="412" cy="326" r="22" fill="#DDF2FF"/>
+  <path d="M398 326H426" stroke="#238BD2" stroke-width="5" stroke-linecap="round"/>
+  <path d="M412 312V340" stroke="#238BD2" stroke-width="5" stroke-linecap="round"/>
+</svg>
