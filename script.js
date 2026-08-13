@@ -23,13 +23,17 @@
       return;
     }
 
+    const headerInner = document.querySelector(".header-inner");
+
     const closeNav = () => {
       nav.classList.remove("is-open");
+      if (headerInner) headerInner.classList.remove("nav-open");
       navToggle.setAttribute("aria-expanded", "false");
     };
 
     navToggle.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("is-open");
+      if (headerInner) headerInner.classList.toggle("nav-open", isOpen);
       navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
@@ -91,12 +95,37 @@
         `Nombre y cargo: ${nombreCargo}\nEmpresa: ${empresa}\nEmail corporativo: ${email}\nTelefono: ${telefono}\nDesafio principal:\n${desafio}`
       );
 
-      status.textContent = "Solicitud preparada correctamente. Abriremos tu correo para enviarla al equipo comercial de NexoMatrix.";
+      // El action mailto abre el cliente de correo del usuario. Si no hay cliente configurado, puede no hacer nada.
+      // A futuro se recomienda reemplazar esto con un fetch a un endpoint real (ej. Formspree o API propia).
+      status.textContent = "Solicitud preparada correctamente. Abriremos tu cliente de correo para enviarla al equipo comercial de NexoMatrix. Si no se abre, por favor escríbenos a contacto@empresa-ti.cl";
       status.classList.add("is-success");
       window.location.href = `mailto:contacto@empresa-ti.cl?subject=${subject}&body=${body}`;
       form.reset();
       form.classList.remove("is-submitted");
     });
+  };
+
+  const initScrollReveal = () => {
+    const elements = document.querySelectorAll('.service-card, .trust-card, .learning-card, .cert-card, .steps-list li, .ia-case-card, .ia-offer, .knowledge-item');
+    if (elements.length === 0) return;
+
+    // Respetar prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      elements.forEach(el => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    elements.forEach(el => observer.observe(el));
   };
 
   const initScrollEffects = () => {
@@ -120,6 +149,7 @@
     initMobileNavigation();
     initContactForm();
     initScrollEffects();
+    initScrollReveal();
   };
 
   document.addEventListener("DOMContentLoaded", init);
