@@ -747,16 +747,10 @@ a  { color: inherit; text-decoration: none; }
 }
 
 .knowledge-icon {
-  display: grid;
-  place-items: center;
   width: 3rem;
   height: 3rem;
   border-radius: 12px;
-  background: var(--icon-bg, var(--c-primary));
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.01em;
+  object-fit: contain;
 }
 
 .knowledge-name {
@@ -1571,8 +1565,10 @@ a  { color: inherit; text-decoration: none; }
   .footer-inner { flex-direction: column; text-align: center; }
 }
 
-/* ≤ 700px — large phone */
-@media (max-width: 700px) {
+/* ≤ 1300px — el menú horizontal (9 enlaces + CTA) no cabe en una fila
+   dentro de .container (tope --max-width: 1180px) en ningún ancho de
+   pantalla "normal"; se usa el menú compacto hasta pantallas muy anchas. */
+@media (max-width: 1300px) {
   .nav-toggle { display: flex; }
 
   .site-nav {
@@ -1631,7 +1627,10 @@ a  { color: inherit; text-decoration: none; }
     color: #fff;
     background: rgba(255, 255, 255, 0.08);
   }
+}
 
+/* ≤ 700px — large phone */
+@media (max-width: 700px) {
   .hero-proof {
     grid-template-columns: 1fr;
   }
@@ -1667,6 +1666,8 @@ a  { color: inherit; text-decoration: none; }
   .hero-actions .btn { width: 100%; justify-content: center; }
 
   .brand-text { display: none; }
+
+  .ia-metrics { grid-template-columns: 1fr; gap: 0.5rem; }
 }
 
 /* === REDUCED MOTION ========================================= */
