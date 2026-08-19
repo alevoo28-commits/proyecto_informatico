@@ -97,9 +97,9 @@
 
       // El action mailto abre el cliente de correo del usuario. Si no hay cliente configurado, puede no hacer nada.
       // A futuro se recomienda reemplazar esto con un fetch a un endpoint real (ej. Formspree o API propia).
-      status.textContent = "Solicitud preparada correctamente. Abriremos tu cliente de correo para enviarla al equipo comercial de NexoMatrix. Si no se abre, por favor escríbenos a contacto@empresa-ti.cl";
+      status.textContent = "Solicitud preparada correctamente. Abriremos tu cliente de correo para enviarla al equipo comercial de NexoMatrix. Si no se abre, por favor escríbenos a cale.voo28@gmail.com";
       status.classList.add("is-success");
-      window.location.href = `mailto:contacto@empresa-ti.cl?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:cale.voo28@gmail.com?subject=${subject}&body=${body}`;
       form.reset();
       form.classList.remove("is-submitted");
     });
