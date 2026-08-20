@@ -1,0 +1,47 @@
+===========================================================
+ POR QUE NO SE SUBE SOLO
+===========================================================
+Git nunca sube nada automaticamente. Cuando yo (o Continue/qwen)
+edita un archivo, el cambio queda SOLO en tu disco hasta que
+corres los 3 comandos de abajo (add, commit, push). GitHub Pages
+recien reconstruye la pagina despues de un push a origin/main.
+
+===========================================================
+ 1) SUBIR TODOS LOS CAMBIOS A MAIN (lo mas comun)
+===========================================================
+Copia y pega esto en PowerShell, dentro de la carpeta del proyecto:
+
+git status
+git add -A
+git commit -m "Describe aqui que cambiaste"
+git push origin main
+
+- "git status" te muestra que archivos cambiaron antes de subir.
+- Cambia el texto entre comillas de "git commit -m" por una
+  descripcion corta de lo que hiciste.
+- "git add -A" agrega TODO lo modificado/nuevo. Si alguna vez no
+  quieres subir un archivo especifico (por ejemplo notas tuyas
+  sueltas), usa en su lugar:
+    git add index.html styles.css script.js
+
+===========================================================
+ 2) VERIFICAR QUE EL PUSH LLEGO A GITHUB
+===========================================================
+git log -1 --oneline
+git ls-remote origin main
+
+Los dos deben mostrar el mismo hash (el codigo corto tipo e4fbb1e).
+
+===========================================================
+ 3) VERIFICAR QUE LA PAGINA EN VIVO YA SE ACTUALIZO
+===========================================================
+Reemplaza "hero-title" por algo que sepas que cambiaste si quieres
+buscar otra cosa.
+
+Invoke-WebRequest -Uri "https://alevoo28-commits.github.io/proyecto_informatico/?v=$(Get-Random)" -UseBasicParsing |
+  Select-Object -ExpandProperty Content |
+  Select-String "hero-title" -Context 0,1
+
+Si el texto que aparece ya es el nuevo, el deploy esta listo (dale
+Ctrl+F5 en el navegador para descartar la cache). Si sigue
+mostrando lo viejo, espera 1-2 minutos y repite el comando.
