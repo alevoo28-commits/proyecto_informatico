@@ -1453,16 +1453,53 @@ a  { color: inherit; text-decoration: none; }
 }
 
 .footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: start;
+  text-align: left;
+}
+
+.footer-inner .brand {
+  margin-bottom: 1rem;
+  display: inline-flex;
 }
 
 .footer-inner p {
-  margin: 0;
+  margin-top: 1rem;
   color: rgba(255,255,255,.4);
+  font-size: 0.85rem;
+}
+
+.footer-heading {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255,255,255,.4);
+  margin: 0;
   font-size: 0.85rem;
 }
 
@@ -1565,7 +1602,15 @@ a  { color: inherit; text-decoration: none; }
 
   .form-grid { grid-template-columns: 1fr; }
 
-  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .footer-inner .brand { justify-content: center; }
+
+  .footer-links { justify-items: center; }
 }
 
 /* ≤ 1300px — el menú horizontal (9 enlaces + CTA) no cabe en una fila
@@ -1619,8 +1664,10 @@ a  { color: inherit; text-decoration: none; }
   }
 
   .site-nav a {
-    display: block;
-    padding: 0.75rem 0.85rem;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.5rem 0.85rem;
     border-radius: 8px;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.7);
